@@ -1,0 +1,23 @@
+# most optimal solution
+class Solution {
+  public:
+
+    void matchPairs(int n, char nuts[], char bolts[]) {
+        // code here
+        vector<char>arr={'!','#','$','%','&','*','?','@','^'};
+        unordered_map<char,int>mp;
+        for(int i=0;i<n;i++){
+            mp[nuts[i]]++;
+        }
+        int j=0;
+        for(char c:arr){
+            if(j>=n)
+                break;
+            if(mp.find(c)!=mp.end()){
+                nuts[j]=c;
+                bolts[j]=c;
+                j++;
+            }
+        }
+    }
+};
