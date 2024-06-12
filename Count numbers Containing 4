@@ -1,0 +1,24 @@
+class Solution {
+  public:
+    int countNumberswith4(int n) {
+        // code here
+        int count=0;
+        for(int i=1;i<=n;i++){
+            if(countNumber(i)){
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    private:
+        bool countNumber(int num){
+            while(num!=0){
+            if (num % 10 == 4) {
+                    return true;
+                }
+                num /= 10; //to remove the last digit
+        }
+        return false;
+        }
+};
